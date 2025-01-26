@@ -1,8 +1,8 @@
-// reducers/recipesReducer.js
+
 
 const initialState = {
-    recipes: [], // Store an array of recipes
-    isLoading: false, // Track loading state
+    recipes: [], 
+    isLoading: false, 
   };
   
   const recipesReducer = (state = initialState, action) => {

@@ -5,17 +5,17 @@ import { useNavigate } from 'react-router-dom';
 import { removeFromFavorites } from '../redux/actions/favoritesActions';
 
 const FavoritesPage = () => {
-  const favorites = useSelector((state) => state.favorites.favorites); // Access favorites from Redux
+  const favorites = useSelector((state) => state.favorites.favorites); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleIngredientClick = (recipe) => {
-    // Navigate to ingredient details page
+    
     navigate('/ingredient', { state: { recipe } });
   };
 
   const handleRemoveFavorite = (recipeLabel) => {
-    // Dispatch action to remove the recipe from favorites
+    
     dispatch(removeFromFavorites(recipeLabel));
   };
 
@@ -25,7 +25,7 @@ const FavoritesPage = () => {
         Favorite Recipes
       </Typography>
 
-      {/* Check if there are favorites */}
+      
       {favorites.length === 0 ? (
         <Typography variant="body1">You have no favorite recipes yet!</Typography>
       ) : (
@@ -40,7 +40,7 @@ const FavoritesPage = () => {
                   </Typography>
 
                   <Stack direction="row" spacing={2}>
-                    {/* Ingredient Count Button */}
+                  
                     <Button
                       variant="outlined"
                       color="primary"
@@ -49,7 +49,7 @@ const FavoritesPage = () => {
                       {recipe.ingredientLines.length} Ingredients
                     </Button>
 
-                    {/* Remove from Favorites Button */}
+                   
                     <Button
                       variant="outlined"
                       color="error"

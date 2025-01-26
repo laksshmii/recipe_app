@@ -15,8 +15,8 @@ const SearchBar = () => {
   };
 
   const handleDefaultSearch = () => {
-    setQuery(''); // Clear the query
-    dispatch(fetchRecipes('chicken')); // Default search term
+    setQuery(''); 
+    dispatch(fetchRecipes('chicken'));
   };
 
   const handleOpenModal = () => {
@@ -29,7 +29,7 @@ const SearchBar = () => {
 
   const handleApplyFilters = (filters) => {
     if (filters) {
-      // Dispatch the filterSearch action
+      
       dispatch(filterSearch(filters));
       console.log('Filters applied:', filters);
     }
@@ -38,7 +38,7 @@ const SearchBar = () => {
 
   return (
     <Box>
-      {/* Search Bar */}
+      
       <Box display="flex" mt={1} alignItems="center" gap="0.5rem">
         <TextField
           variant="outlined"
@@ -59,7 +59,7 @@ const SearchBar = () => {
         </Button>
       </Box>
 
-      {/* Line Below Search Bar */}
+      
       <Box mt={2} display="flex" justifyContent="center" gap="1rem">
         <Typography
           variant="body1"
@@ -71,7 +71,7 @@ const SearchBar = () => {
         </Typography>
       </Box>
 
-      {/* Modal for FilterSearch */}
+      
       <Modal open={isFilterModalOpen} onClose={handleCloseModal}>
         <Box
           sx={{

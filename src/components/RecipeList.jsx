@@ -2,16 +2,16 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import RecipeCard from './RecipeCard';
 import { Grid, Typography, CircularProgress } from '@mui/material';
-import { fetchRecipes } from '../redux/actions/recipeActions'; // Adjust the path as needed
+import { fetchRecipes } from '../redux/actions/recipeActions'; 
 
 const RecipeList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector((state) => state.recipes.recipes);
   const isLoading = useSelector((state) => state.recipes.isLoading);
-  const error = useSelector((state) => state.recipes.error); // Assuming error state exists
+  const error = useSelector((state) => state.recipes.error); 
 
   useEffect(() => {
-    dispatch(fetchRecipes('chicken')); // Replace 'chicken' with the query you want
+    dispatch(fetchRecipes('chicken')); 
   }, [dispatch]);
 
   if (isLoading) {
@@ -43,7 +43,7 @@ const RecipeList = () => {
   return (
     <Grid container spacing={3} sx={{ mt: 2 }}>
       {recipes.map((recipeData) => (
-        <Grid item xs={12} sm={6} md={2.4} key={recipeData.recipe.uri}> {/* Adjust to 2.4 for 5 cards in a row */}
+        <Grid item xs={12} sm={6} md={2.4} key={recipeData.recipe.uri}> 
           <RecipeCard recipe={recipeData.recipe} />
         </Grid>
       ))}

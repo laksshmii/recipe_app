@@ -15,8 +15,8 @@ import {
 } from '@mui/material';
 
 const IngredientDetails = () => {
-  const location = useLocation(); // Access location state
-  const { recipe } = location.state || {}; // Get the recipe data passed via state
+  const location = useLocation(); 
+  const { recipe } = location.state || {}; 
 
   if (!recipe) {
     return <Typography variant="h6">Recipe details not found.</Typography>;
@@ -24,16 +24,16 @@ const IngredientDetails = () => {
 
   const totalNutrients = recipe.totalNutrients || {};
   const ingredients = recipe.ingredients || [];
-  const servings = recipe.yield || 1; // Number of servings
-  const calories = recipe.calories || 0; // Total calories
+  const servings = recipe.yield || 1; 
+  const calories = recipe.calories || 0; 
 
   const formatNutrient = (value) => {
-    return value ? value.toFixed(2) : '0.00'; // Round to 2 decimal places or return 0 if no value
+    return value ? value.toFixed(2) : '0.00'; 
   };
 
   return (
     <Container sx={{ mt: 4 }}>
-      {/* Recipe Image */}
+     
       <Card sx={{ mb: 3 }}>
         <CardMedia
           component="img"
@@ -43,14 +43,14 @@ const IngredientDetails = () => {
         />
       </Card>
 
-      {/* Recipe Title */}
+     
       <Typography variant="h2" sx={{ mb: 2 }}>
         {recipe.label}
       </Typography>
 
-      {/* Recipe Layout */}
+     
       <Grid container spacing={4}>
-        {/* Ingredients Section */}
+       
         <Grid item xs={12} md={6}>
           <Typography variant="h3" sx={{ mb: 2,fontStyle:"bold" }}>
             Ingredients
@@ -62,7 +62,7 @@ const IngredientDetails = () => {
               </ListItem>
             ))}
           </List>
-          {/* Instructions Button */}
+        
           <Box sx={{ mt: 2 }}>
             <Button
               variant="contained"
@@ -76,7 +76,7 @@ const IngredientDetails = () => {
           </Box>
         </Grid>
 
-        {/* Nutrition Section */}
+        
         <Grid item xs={12} md={6}>
           <Typography variant="h3" sx={{ mb: 2 ,fontStyle:"bold"}}>
             Nutrition

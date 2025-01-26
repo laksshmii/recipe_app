@@ -1,10 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { thunk } from 'redux-thunk'; // Import 'thunk' as a named export
+import { thunk } from 'redux-thunk'; 
 import recipesReducer from './reducers/recipesReducer';
 import favoritesReducer from './reducers/favoritesReducer';
 import filtersReducer from './reducers/filtersReducer';
 
-// Ensure all reducers are valid functions
 const rootReducer = combineReducers({
   recipes: recipesReducer || (() => ({})),
   favorites: favoritesReducer || (() => ({})),

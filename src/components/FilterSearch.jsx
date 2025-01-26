@@ -84,7 +84,7 @@ const FilterSearch = ({ onApplyFilters }) => {
             allergies: filteredAllergies,
         };
 
-        // Pass the filtered values to the parent component
+       
         onApplyFilters(appliedFilters);
     };
 
@@ -94,7 +94,7 @@ const FilterSearch = ({ onApplyFilters }) => {
                 Refine Search
             </Typography>
 
-            {/* Calories Filter */}
+           
             <Grid container spacing={2}>
                 <Grid item xs={6}>
                     <TextField
@@ -118,7 +118,7 @@ const FilterSearch = ({ onApplyFilters }) => {
                 </Grid>
             </Grid>
 
-            {/* Ingredients Filter */}
+           
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <TextField
@@ -132,7 +132,7 @@ const FilterSearch = ({ onApplyFilters }) => {
                 </Grid>
             </Grid>
 
-            {/* Diet Filters */}
+          
             <Divider sx={{ my: 2 }} />
             <Typography variant="subtitle1">Diet</Typography>
             <Grid container spacing={2}>
@@ -151,7 +151,7 @@ const FilterSearch = ({ onApplyFilters }) => {
                 ))}
             </Grid>
 
-            {/* Allergies Filters */}
+          
             <Divider sx={{ my: 2 }} />
             <Typography variant="subtitle1">Allergies</Typography>
             <Grid container spacing={2}>
@@ -170,7 +170,7 @@ const FilterSearch = ({ onApplyFilters }) => {
                 ))}
             </Grid>
 
-            {/* Clear and Apply Buttons */}
+           
             <Divider sx={{ my: 2 }} />
             <Grid container justifyContent="space-between">
                 <Button variant="text" color="error" onClick={handleClearFilters}>

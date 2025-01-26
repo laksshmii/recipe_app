@@ -12,21 +12,21 @@ const Header = () => {
   const location = useLocation();
 
   const handleNavigateToFavorites = () => {
-    // Navigate to the favorites list page
+   
     navigate('/favorites');
   };
 
   const handleBackNavigation = () => {
-    // Navigate to the previous page
+   
     navigate(-1);
   };
 
   return (
     <AppBar position="sticky" color="primary">
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        {/* Back Button */}
+       
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {location.pathname !== '/' && ( // Show back button only if not on the home page
+          {location.pathname !== '/' && ( 
             <IconButton color="inherit" onClick={handleBackNavigation}>
               <ArrowBackIcon />
             </IconButton>

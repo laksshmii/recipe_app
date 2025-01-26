@@ -11,22 +11,22 @@ const RecipeCard = ({ recipe }) => {
   const navigate = useNavigate();
 
   console.log('recipe', recipe);
-  // Access the favorites list from Redux store
+  
   const favorites = useSelector((state) => state.favorites.favorites);
 
-  // Check if the current recipe is already in favorites
+  
   const isFavorite = favorites.some((fav) => fav.label === recipe.label);
 
   const handleFavorite = () => {
     if (isFavorite) {
-      dispatch(removeFromFavorites(recipe.label)); // Remove from favorites
+      dispatch(removeFromFavorites(recipe.label)); 
     } else {
-      dispatch(addToFavorites(recipe)); // Add to favorites
+      dispatch(addToFavorites(recipe)); 
     }
   };
 
   const handleIngredientClick = () => {
-    navigate('/ingredient', { state: { recipe } }); // Navigate to ingredient page with recipe data
+    navigate('/ingredient', { state: { recipe } })
   };
 
   return (
@@ -40,7 +40,7 @@ const RecipeCard = ({ recipe }) => {
     >
       <CardMedia component="img" height="140" image={recipe.image} alt={recipe.label} />
       <CardContent>
-        {/* Ensure the label is truncated to a single line */}
+        
         <Typography
           variant="h6"
           gutterBottom
@@ -48,9 +48,9 @@ const RecipeCard = ({ recipe }) => {
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
-            fontSize: '1rem', // Adjust font size for better fit
+            fontSize: '1rem', 
           }}
-          title={recipe.label} // Show full label on hover
+          title={recipe.label} 
         >
           {recipe.label}
         </Typography>
@@ -70,7 +70,7 @@ const RecipeCard = ({ recipe }) => {
             </Button>
           </Tooltip>
 
-          {/* Ingredient Count Button */}
+          
           <Button
             variant="outlined"
             color="primary"
